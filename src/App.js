@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import { TweenLite, Power3 } from 'gsap';
@@ -11,15 +11,19 @@ import imgFive from './img/card-img5.PNG';
 import imgSix from './img/card-img6.jpg';
 import imgSeven from './img/card-img7.jpg';
 import imgEight from './img/card-img8.jpg';
-
+//modal component import
+import { ModalComponent } from './components/ModalComponent';
 
 export function Cards() {
+
+  const [modal, setModal] = useState(false);
+
   let top = useRef(null);
   let bottom = useRef(null);
 
 useEffect(() => {
-  TweenLite.from(top, {x: -1000, duration: 3, ease: Power3})
-  TweenLite.from(bottom, {x: 1000, duration: 3, ease: Power3})
+  TweenLite.from(top, 1, {x: -1000, ease: Power3})
+  TweenLite.from(bottom, 1, {x: 1000, ease: Power3})
 }, [])
 
   return (
@@ -29,7 +33,10 @@ useEffect(() => {
           <img className = 'card-img' src = {imgOne} alt = '' />
           <h3 className = 'card-title'>Card Title</h3>
           <p className = 'card-text'>Card Text</p>
-          <button className = 'card-btn'>Card Button</button>
+          <button onClick = {() => {setModal(!modal)}} className = 'card-btn'>Card Button</button>
+          {modal ? (
+            <ModalComponent />
+          ) : null}
         </div>
         <div className = 'card'>
           <img className = 'card-img' src = {imgTwo} alt = '' />
@@ -85,12 +92,14 @@ const CardsWrapper = styled.div `
   background-color: lightGray;
   
   .cards-top {
+    z-index: 1;
     display: flex;
     @media (max-width: 425px) {
       flex-direction: column;
       align-items: center;
     }
     .card {
+      
       background-color: white;
       width: 25%;
       margin: 1%;
@@ -119,12 +128,14 @@ const CardsWrapper = styled.div `
     }
   }
   .cards-bottom {
+    
     display: flex;
     @media (max-width: 425px) {
       flex-direction: column;
       align-items: center;
     }
     .card {
+      
       background-color: white;
       width: 25%;
       margin: 1%;
