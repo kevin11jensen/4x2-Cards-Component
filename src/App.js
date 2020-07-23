@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import './App.css';
+import { TweenLite, Power3 } from 'gsap';
+//img imports
 import imgOne from './img/card-img1.jpg';
 import imgTwo from './img/card-img2.jpg';
 import imgThree from './img/card-img3.jpg';
@@ -12,9 +14,17 @@ import imgEight from './img/card-img8.jpg';
 
 
 export function Cards() {
+  let top = useRef(null);
+  let bottom = useRef(null);
+
+useEffect(() => {
+  TweenLite.from(top, {x: -1000, duration: 3, ease: Power3})
+  TweenLite.from(bottom, {x: 1000, duration: 3, ease: Power3})
+}, [])
+
   return (
     <CardsWrapper>
-      <section className = 'cards-top'>
+      <section ref = {el => (top = el)} className = 'cards-top'>
         <div className = 'card'>
           <img className = 'card-img' src = {imgOne} alt = '' />
           <h3 className = 'card-title'>Card Title</h3>
@@ -41,7 +51,7 @@ export function Cards() {
       </div>
       </section>
 
-      <section className = 'cards-bottom'>
+      <section ref = {el => (bottom = el)} className = 'cards-bottom'>
         <div className = 'card'>
           <img className = 'card-img' src = {imgFive} alt = '' />
           <h3 className = 'card-title'>Card Title</h3>
