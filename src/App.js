@@ -73,17 +73,28 @@ export function Cards() {
 
 const CardsWrapper = styled.div `
   background-color: lightGray;
+  
   .cards-top {
     display: flex;
+    @media (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+    }
     .card {
       background-color: white;
       width: 25%;
       margin: 1%;
       text-align: center;
+      @media (max-width: 425px) {
+        width: 95%;
+      }
       .card-img {
         width: 100%;
         height: 11rem;
         object-fit: cover;
+        @media (max-width: 425px) {
+          height: 16rem;
+        }
       }
       .card-title {
               
@@ -99,15 +110,25 @@ const CardsWrapper = styled.div `
   }
   .cards-bottom {
     display: flex;
+    @media (max-width: 425px) {
+      flex-direction: column;
+      align-items: center;
+    }
     .card {
       background-color: white;
       width: 25%;
       margin: 1%;
       text-align: center;
+      @media (max-width: 425px) {
+        width: 95%;
+      }
       .card-img {
         width: 100%;
         height: 11rem;
         object-fit: cover;
+        @media (max-width: 425px) {
+          height: 16rem;
+        }
       }
       .card-title {
               
