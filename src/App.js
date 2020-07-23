@@ -15,19 +15,19 @@ export function Cards() {
   return (
     <CardsWrapper>
       <section className = 'cards-top'>
-      <div className = 'card'>
-        <img className = 'card-img' src = {imgOne} alt = '' />
-        <h3 className = 'card-title'>Card Title</h3>
-        <p className = 'card-text'>Card Text</p>
-        <button className = 'card-btn'>Card Button</button>
-      </div>
-      <div className = 'card'>
-        <img className = 'card-img' src = {imgTwo} alt = '' />
-        <h3 className = 'card-title'>Card Title</h3>
-        <p className = 'card-text'>Card Text</p>
-        <button className = 'card-btn'>Card Button</button>
-      </div>
-      <div className = 'card'>
+        <div className = 'card'>
+          <img className = 'card-img' src = {imgOne} alt = '' />
+          <h3 className = 'card-title'>Card Title</h3>
+          <p className = 'card-text'>Card Text</p>
+          <button className = 'card-btn'>Card Button</button>
+        </div>
+        <div className = 'card'>
+          <img className = 'card-img' src = {imgTwo} alt = '' />
+          <h3 className = 'card-title'>Card Title</h3>
+          <p className = 'card-text'>Card Text</p>
+          <button className = 'card-btn'>Card Button</button>
+        </div>
+        <div className = 'card'>
         <img className = 'card-img' src = {imgThree} alt = '' />
         <h3 className = 'card-title'>Card Title</h3>
         <p className = 'card-text'>Card Text</p>
@@ -42,13 +42,13 @@ export function Cards() {
       </section>
 
       <section className = 'cards-bottom'>
-      <div className = 'card'>
-        <img className = 'card-img' src = {imgFive} alt = '' />
-        <h3 className = 'card-title'>Card Title</h3>
-        <p className = 'card-text'>Card Text</p>
-        <button className = 'card-btn'>Card Button</button>
-      </div>
-      <div className = 'card'>
+        <div className = 'card'>
+          <img className = 'card-img' src = {imgFive} alt = '' />
+          <h3 className = 'card-title'>Card Title</h3>
+          <p className = 'card-text'>Card Text</p>
+          <button className = 'card-btn'>Card Button</button>
+        </div>
+        <div className = 'card'>
         <img className = 'card-img' src = {imgSix} alt = '' />
         <h3 className = 'card-title'>Card Title</h3>
         <p className = 'card-text'>Card Text</p>
@@ -72,49 +72,53 @@ export function Cards() {
 }
 
 const CardsWrapper = styled.div `
-  
-background-color: lightGray;
-    
-    .cards-top {
-      display: flex;
-      .card {
-        width: 25%;
-        margin: 1%;
-        background-color: white;
-        .card-img {
-          width: 25%;
+  background-color: lightGray;
+  .cards-top {
+    display: flex;
+    .card {
+      background-color: white;
+      width: 25%;
+      margin: 1%;
+      text-align: center;
+      .card-img {
+        width: 100%;
+        height: 11rem;
+        object-fit: cover;
+      }
+      .card-title {
+              
+      }
+      .card-text {
           
-        }
-        .card-title {
-          
-        }
-        .card-text {
-    
-        }
-        .card-btn {
-    
-        }
-      
+      }
+      .card-btn {
+          margin-bottom: 3%;
+          padding: 2% 5%;
+      }
     }
-    .cards-bottom {
-      display: flex;
-      .card {
-        width: 25%;
-        margin: 1%;
-        background-color: white;
-        .card-img {
-          width: 100%;
+  }
+  .cards-bottom {
+    display: flex;
+    .card {
+      background-color: white;
+      width: 25%;
+      margin: 1%;
+      text-align: center;
+      .card-img {
+        width: 100%;
+        height: 11rem;
+        object-fit: cover;
+      }
+      .card-title {
+              
+      }
+      .card-text {
           
-        }
-        .card-title {
-          
-        }
-        .card-text {
-    
-        }
-        .card-btn {
-    
-        }
-    
+      }
+      .card-btn {
+          margin-bottom: 3%;
+          padding: 2% 5%;
+      }
+    }
   }
 `
